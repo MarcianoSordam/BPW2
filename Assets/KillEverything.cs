@@ -10,7 +10,6 @@ public class KillEverything : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("destroyer triggered");
         Destroy(other.gameObject);
         wm.countUp();
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class enemyWave : MonoBehaviour
 {
@@ -10,20 +11,33 @@ public class enemyWave : MonoBehaviour
     public GameObject enemyElete;
     public GameObject enemyRunner;
     public WaveManager wm;
+    public SoundTrackManager soundtrack;
     public Vector3[] spawnPoints;
     public int[] Wave1_Point;
     public int[] Wave2_Point;
     public int[] Wave3_Point;
     public GameObject DisableAfterWin;
+    public int Level = 0;
+    
 
     private void Awake()
     {
+        soundtrack = GameObject.Find("Soundtrack").GetComponent<SoundTrackManager>();
         wm = GameObject.Find("GameManager").GetComponent<WaveManager>();
         wave = 1;
         Debug.Log("waveManager Started");
+       
     }
+
+    private void Start()
+    {
+        //turn up volume
+        soundtrack.VolumeUp(Level);
+    }
+
     private void Update()
     {
+        
         if (wave == 1)
         {
             if (spawned == false)
@@ -76,6 +90,7 @@ public class enemyWave : MonoBehaviour
             //wait until all enemys are dead
             if (wm.enemyDeath == 4)
             {
+                soundtrack.VolumeDown();
                 Debug.Log("wave 3 ended");
                 wave = 1;
                 wm.DoReset();
@@ -102,6 +117,8 @@ public class enemyWave : MonoBehaviour
     {
         return list[Random.Range(0, list.Length)];
     }
+
+    
 
 }
 

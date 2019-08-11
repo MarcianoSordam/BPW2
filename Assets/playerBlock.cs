@@ -4,16 +4,19 @@ using XInputDotNetPure;
 
 public class playerBlock : MonoBehaviour
 {
+    //Player block is nu een rapid fire PowerUp.
     public float shieldcount;
     public GameObject shield;
     bool cooldown = false;
     public GameObject shield1;
     public GameObject shield2;
     public GameObject shield3;
+    public Weapon weapon;
 
     private void Awake()
     {
         shieldcount = 3;
+        weapon = GetComponent<Weapon>();
     }
     private void Update()
     {
@@ -57,10 +60,10 @@ public class playerBlock : MonoBehaviour
 
     IEnumerator Shield()
     {
-        shield.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        shield.SetActive(false);
-        yield return new WaitForSeconds(10f);
+        weapon.SpeedUp();
+        yield return new WaitForSeconds(2f);
+        weapon.SpeedDown();
+        yield return new WaitForSeconds(2f);
         cooldown = false;
     }
 }

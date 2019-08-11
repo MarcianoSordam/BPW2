@@ -86,9 +86,14 @@ public class Weapon : MonoBehaviour
 
     }
 
-    void SetMotorSpeeds(float lowFrequency, float highFrequency, float leftTrigger, float rightTrigger)
+    public void SpeedUp()
     {
+        fireSpeed = fireSpeed * 3;
+    }
 
+    public void SpeedDown()
+    {
+        fireSpeed = fireSpeed / 3;
     }
 
     IEnumerator ShootRumle()

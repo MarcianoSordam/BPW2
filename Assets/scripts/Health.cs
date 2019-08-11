@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     public GameObject dropObject;
     public ParticleSystem deatheffect;
     public Reset gamesystem;
-
+    private bool dead = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -24,8 +24,9 @@ public class Health : MonoBehaviour
             health = health - 1;
         }
 
-        if (health <= 0)
+        if (health <= 0 && dead == false)
         {
+            dead = true;
             Die();
         }
 

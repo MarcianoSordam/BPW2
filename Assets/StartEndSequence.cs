@@ -22,7 +22,7 @@ public class StartEndSequence : MonoBehaviour
     IEnumerator EndSequence()
     {
         EndScreen.SetActive(true);
-        yield return new WaitForSeconds(21);
+        yield return new WaitForSeconds(26);
         EndScreen.SetActive(false);
         JumpScreen.SetActive(true);
         jumpBlock.SetActive(true);

@@ -8,7 +8,6 @@ public class WaveManager : MonoBehaviour
     public void countUp()
     {
         enemyDeath += 1;
-        Debug.Log(enemyDeath);
     }
 
     public void DoReset()

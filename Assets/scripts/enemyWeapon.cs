@@ -10,12 +10,13 @@ public class enemyWeapon : MonoBehaviour
     public float waitMax = 4;
     private float wait;
     public Animator animator;
+    public AudioSource ShootSound;
 
     private void Awake()
     {
         
         wait = (Random.Range(waitMin, waitMax));
-         
+        ShootSound = GetComponent<AudioSource>();
 
     }
 
@@ -27,6 +28,7 @@ public class enemyWeapon : MonoBehaviour
         {
             StartCoroutine(Shoot());
             shootTimer = 0;
+            ShootSound.Play();
         }
     }
 

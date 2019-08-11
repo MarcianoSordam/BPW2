@@ -120,7 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   wm: {fileID: 0}
-  dropObject: {fileID: 0}
+  dropObject: {fileID: 6958935399465649734, guid: a431c0ce2c5ed10498a05262f1485f84,
+    type: 3}
   deatheffect: {fileID: 117041997939171896}
   gamesystem: {fileID: 0}
 --- !u!198 &117041997939171896
