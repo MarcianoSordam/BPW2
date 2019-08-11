@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   impact: {fileID: 3441038386440337079, guid: e8706c237014ad94c9252afca6b6fa85, type: 3}
+  ImpactSound: {fileID: 0}
 --- !u!96 &9209187841170260368
 TrailRenderer:
   serializedVersion: 2

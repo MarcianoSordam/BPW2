@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b00527f85bb3346a4d2cb710971587, type: 3}
   m_Name: VolumetricFog
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   colorMode:
     m_OverrideState: 1
@@ -146,7 +146,7 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 70
+    m_Value: 193.01
     min: 1
   baseHeight:
     m_OverrideState: 1
@@ -215,13 +215,13 @@ MonoBehaviour:
     m_Value: 0
   top:
     m_OverrideState: 1
-    m_Value: {r: 0.133, g: 0.133, b: 0.133, a: 1}
+    m_Value: {r: 0.3915094, g: 1, b: 0.9642869, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   middle:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.66538745, g: 0.45641106, b: 1, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   sampleCount:
     m_OverrideState: 1
@@ -406,7 +406,7 @@ MonoBehaviour:
     min: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.1
     min: 0
   maxVelocity:
     m_OverrideState: 1

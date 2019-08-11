@@ -13,6 +13,6 @@ public class cameraFollow : MonoBehaviour
     }
     void LateUpdate()
     {
-        transform.position = new Vector3(player.transform.position.x + xPos, yPos, player.transform.position.z + zPos);
+        transform.position = new Vector3(player.transform.position.x + xPos, player.transform.position.y + yPos, player.transform.position.z + zPos);
     }
 }

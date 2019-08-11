@@ -26,16 +26,20 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-            wm.countUp();
-            gamesystem.CountUp();
-            float drop = Random.Range(0, 6);
-            if (drop == 1)
-            {
-                Instantiate(dropObject, transform.position, transform.rotation);
-            }
-
-            Destroy(gameObject);
-
+            Die();
         }
+
+    }
+    public void Die()
+    {
+        Debug.Log("enemy death");
+        wm.countUp();
+        float drop = Random.Range(0, 6);
+        if (drop == 1)
+        {
+            Instantiate(dropObject, transform.position, transform.rotation);
+        }
+        Debug.Log("enemydestroyed");
+        Destroy(gameObject);
     }
 }

@@ -11,7 +11,11 @@ public class enemyWave : MonoBehaviour
     public GameObject enemyRunner;
     public WaveManager wm;
     public Vector3[] spawnPoints;
-        
+    public int[] Wave1_Point;
+    public int[] Wave2_Point;
+    public int[] Wave3_Point;
+    public GameObject DisableAfterWin;
+
     private void Awake()
     {
         wm = GameObject.Find("GameManager").GetComponent<WaveManager>();
@@ -20,21 +24,17 @@ public class enemyWave : MonoBehaviour
     }
     private void Update()
     {
-        //spawn 3 enemys
         if (wave == 1)
         {
             if (spawned == false)
             {
                 Debug.Log("wave 1 started");
-                //Instantiate(enemyTurret, SpawnPoint1, transform.rotation);
-                //Instantiate(enemyTurret, SpawnPoint4, transform.rotation);
-                //Instantiate(enemyRunner, SpawnPoint7, transform.rotation);
-                SpawnWave(1, 3, 5);
+                SpawnWave(Wave1_Point[0], Wave1_Point[1], Wave1_Point[2], Wave1_Point[3]);
                 spawned = true;
             }
 
             //wait until all enemys are dead
-            if (wm.enemyDeath == 3)
+            if (wm.enemyDeath == 4)
             {
                 Debug.Log("wave 1 Ended");
                 wave = 2;
@@ -43,24 +43,18 @@ public class enemyWave : MonoBehaviour
             }
         }
 
-        // spawn 5 enemys
         else if (wave == 2)
         {
             if (spawned == false)
             {
                 Debug.Log("wave 2 started");
-                //Instantiate(enemyTurret, SpawnPoint3, transform.rotation);
-                //Instantiate(enemyTurret, SpawnPoint1, transform.rotation);
-                //Instantiate(enemyTurret, SpawnPoint2, transform.rotation);
-                //Instantiate(enemyRunner, SpawnPoint5, transform.rotation);
-                //Instantiate(enemyRunner, SpawnPoint6, transform.rotation);
-                SpawnWave(2, 6, 4, 7, 1);
+                SpawnWave(Wave2_Point[0],Wave2_Point[1], Wave2_Point[2], Wave2_Point[3]);
 
                 spawned = true;
             }
 
             //wait until all enemys are dead
-            if (wm.enemyDeath == 5)
+            if (wm.enemyDeath == 4)
             {
                 Debug.Log("wave 2 Ended");
                 wave = 3;
@@ -70,32 +64,24 @@ public class enemyWave : MonoBehaviour
             }
         }
 
-        // spawn 7 enemys
-
         else if  (wave == 3)
         {
             if (spawned == false)
             {
                 Debug.Log("wave 3 started");
-                //Instantiate(enemyTurret, SpawnPoint4, transform.rotation);
-                //Instantiate(enemyTurret, SpawnPoint3, transform.rotation);
-                //Instantiate(enemyTurret, SpawnPoint5, transform.rotation);
-                //Instantiate(enemyRunner, SpawnPoint6, transform.rotation);
-                //Instantiate(enemyRunner, SpawnPoint2, transform.rotation);
-                //Instantiate(enemyTurret, SpawnPoint7, transform.rotation);
-                //Instantiate(enemyRunner, SpawnPoint1, transform.rotation);
-                SpawnWave(1, 2, 3, 4, 5, 6, 7);
+                SpawnWave(Wave2_Point[0], Wave2_Point[1], Wave2_Point[2], Wave2_Point[3]);
                 spawned = true;
             }
 
             //wait until all enemys are dead
-            if (wm.enemyDeath == 7)
+            if (wm.enemyDeath == 4)
             {
                 Debug.Log("wave 3 ended");
                 wave = 1;
                 wm.DoReset();
                 spawned = false;
                 enabled = false;
+                DisableAfterWin.SetActive(false);
             }
         }
 
@@ -118,3 +104,4 @@ public class enemyWave : MonoBehaviour
     }
 
 }
+

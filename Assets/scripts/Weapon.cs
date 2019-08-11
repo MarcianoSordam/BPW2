@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     float fire = 1;
     public ParticleSystem muzzleFlash;
     public float triggerPoint = 1;
+    public AudioSource ShootSound;
 
     bool playerIndexSet = false;
     PlayerIndex playerIndex;
@@ -19,6 +20,7 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         //bulletPrefab = GameObject.Find("bullet");
+        ShootSound = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -27,6 +29,7 @@ public class Weapon : MonoBehaviour
         {
 
             Shoot();
+            
 
         }
 
@@ -73,6 +76,7 @@ public class Weapon : MonoBehaviour
         {
             StartCoroutine(ShootRumle());
             GameObject Bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            ShootSound.Play();
             muzzleFlash.Play();
             Destroy(Bullet, 5f);
             fire = 0;

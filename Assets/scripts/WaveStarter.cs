@@ -4,6 +4,7 @@ public class WaveStarter : MonoBehaviour
 {
     public enemyWave wavespawner;
     public WaveManager wavemanager;
+    bool started = false;
     private void Awake()
     {
         wavespawner = GetComponent<enemyWave>();
@@ -13,9 +14,10 @@ public class WaveStarter : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-      
-        if (other.gameObject.name == "Player")
+
+        if (other.gameObject.name == "Player" && started == false)
         {
+            started = true;
             wavespawner.enabled = true;
             wavemanager.DoReset();
 

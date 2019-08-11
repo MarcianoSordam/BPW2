@@ -6,6 +6,7 @@ public class playerHealth : MonoBehaviour
     public float health;
     public Slider healthbar;
     public Reset gamesystem;
+    public AudioSource dmgSound;
     
     public void Dmg(float amount)
     {
@@ -17,6 +18,7 @@ public class playerHealth : MonoBehaviour
             gamesystem.GameOver();
         }
         healthbar.value = health / 30;
+        dmgSound.Play();
     }
 
     public void Heal(float amount)
